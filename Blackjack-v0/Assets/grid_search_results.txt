@@ -1,0 +1,74 @@
+Results of testing:
+
+
+Agent index: 0
+**************************************************
+Alpha : 0.1
+Epsilon : 0.8
+Episodes : 1000000
+Percentage of games won:  37.88
+{'Losses': 5648, 'Draws': 564, 'Wins': 3788}
+
+Agent index: 1
+**************************************************
+Alpha : 1
+Epsilon : 0.8
+Episodes : 1000000
+Percentage of games won:  38.2
+{'Losses': 5614, 'Draws': 566, 'Wins': 3820}
+
+Agent index: 2
+**************************************************
+Alpha : 0.01
+Epsilon : 0.8
+Episodes : 1000000
+Percentage of games won:  37.89
+{'Losses': 5701, 'Draws': 510, 'Wins': 3789}
+
+Agent index: 3
+**************************************************
+Alpha : 1
+Epsilon : 0.5
+Episodes : 1000000
+Percentage of games won:  37.26
+{'Losses': 5765, 'Draws': 509, 'Wins': 3726}
+
+Agent index: 4
+**************************************************
+Alpha : 0.1
+Epsilon : 0.5
+Episodes : 1000000
+Percentage of games won:  39.019999999999996
+{'Losses': 5509, 'Draws': 589, 'Wins': 3902}
+
+Agent index: 5
+**************************************************
+Alpha : 1
+Epsilon : 0.25
+Episodes : 1000000
+Percentage of games won:  38.84
+{'Losses': 5336, 'Draws': 780, 'Wins': 3884}
+
+Agent index: 6
+**************************************************
+Alpha : 0.1
+Epsilon : 0.25
+Episodes : 1000000
+Percentage of games won:  38.83
+{'Losses': 5540, 'Draws': 577, 'Wins': 3883}
+
+Agent index: 7
+**************************************************
+Alpha : 0.01
+Epsilon : 0.5
+Episodes : 1000000
+Percentage of games won:  40.300000000000004
+{'Losses': 5239, 'Draws': 731, 'Wins': 4030}
+
+Agent index: 8
+**************************************************
+Alpha : 0.01
+Epsilon : 0.25
+Episodes : 1000000
+Percentage of games won:  39.36
+{'Losses': 5421, 'Draws': 643, 'Wins': 3936}
