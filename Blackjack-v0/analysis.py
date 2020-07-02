@@ -48,31 +48,31 @@ if __name__ == '__main__':
 	table = np.array(table)
 
 	for hand in range(12, 22):
-					state_u, state_no_u = get_state_info(hand)
-					hit_u, hold_u = get_action_info(state_u)
-					hit_n_u, hold_n_u = get_action_info(state_no_u)
-					state_info = [get_state_action_info(hit_u, hold_u),
-								  get_state_action_info(hit_n_u, hold_n_u)]
-			
-					fig, ax = plt.subplots(nrows=1, ncols=2)
-					bars = []
-					counter = 0
-					for col in ax:
-						info = state_info[counter]
-						bars.append(col.bar(range(len(info[1])), info[1], \
-							                color='g', label = 'Hit'))
-						bars.append(col.bar(range(len(info[1])), info[2], \
-							                color='r', label = 'Hold'))
-						usable = counter == 0
-						col.set_title(f'Player sum: {info[0]}, Usable: {usable}')
-						col.legend()
-						counter += 1
-			
-					fig.text(0.5, 0.04, 'Dealers hand:', ha='center')
-					fig.text(0.04, 0.5, 'Action value:', va='center', \
-						     rotation='vertical')
-					#plt.savefig(f"Plots/player-hand-{hand}.png")
-					plt.show()
+		state_u, state_no_u = get_state_info(hand)
+		hit_u, hold_u = get_action_info(state_u)
+		hit_n_u, hold_n_u = get_action_info(state_no_u)
+		state_info = [get_state_action_info(hit_u, hold_u),
+					  get_state_action_info(hit_n_u, hold_n_u)]
+
+		fig, ax = plt.subplots(nrows=1, ncols=2)
+		bars = []
+		counter = 0
+		for col in ax:
+			info = state_info[counter]
+			bars.append(col.bar(range(len(info[1])), info[1], \
+				                color='g', label = 'Hit'))
+			bars.append(col.bar(range(len(info[1])), info[2], \
+				                color='r', label = 'Hold'))
+			usable = counter == 0
+			col.set_title(f'Player sum: {info[0]}, Usable: {usable}')
+			col.legend()
+			counter += 1
+
+		fig.text(0.5, 0.04, 'Dealers hand:', ha='center')
+		fig.text(0.04, 0.5, 'Action value:', va='center', \
+			     rotation='vertical')
+		#plt.savefig(f"Plots/player-hand-{hand}.png")
+		plt.show()
 
 
 	'''2) Use the TD-zero algorithm to calculate the value function under the 
@@ -87,7 +87,7 @@ if __name__ == '__main__':
 	value_function = dict.fromkeys(states, 0)
 
 	# Approximate the value function.
-	prediction = TDZero(env, value_function, agent, 0.5, 1, 100000)
+	prediction = TDZero(env, value_function, agent, 0.1, 1, 1000000)
 	print('Beginning prediction...')
 	prediction.predict()
 	value_function = prediction.value_function

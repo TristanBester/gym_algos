@@ -35,7 +35,7 @@ if __name__ == '__main__':
 			print(f'\x1b[0;30;47m' + f'Agent chooses action: {ac}' + '\x1b[0m')
 			obs, reward, done, _ = env.step(a)
 			a = agent.greedy_action(obs)
-			time.sleep(5)
+			time.sleep(2)
 		render(obs)
 
 		if reward == 1:
@@ -44,7 +44,7 @@ if __name__ == '__main__':
 			print(f'\x1b[5;30;43m' + 'Draw' + '\x1b[0m')
 		else:
 			print(f'\x1b[5;30;41m' + 'Game lost' + '\x1b[0m')
-		time.sleep(5)
+		time.sleep(3)
 
 
 

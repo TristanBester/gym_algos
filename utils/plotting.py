@@ -10,7 +10,8 @@ def get_LS_fit(aves):
 	aves = np.array(aves)
 
 	lin_reg.fit(xs.reshape(-1,1), aves.reshape(-1,1))
-	linear_fit = lin_reg.predict(aves.reshape(-1,1))
+
+	linear_fit = lin_reg.predict(xs.reshape(-1,1))
 	return linear_fit
 
 def moving_ave(ls, n=10):

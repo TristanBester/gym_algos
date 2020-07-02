@@ -46,7 +46,6 @@ class QLearning(object):
 		return greedy_idx
 
 
-
 	def train(self, idx=None, q=None):
 		if self.record_training:
 			self.all_rewards = []
@@ -61,8 +60,8 @@ class QLearning(object):
 				a = self.eps_greedy(obs)
 				obs_prime, reward, done, info = self.env.step(a)
 				self.Q_table[obs,a] += self.alpha * (reward + self.gamma *
-									 self.opt_action_val(obs_prime) - 
-									 self.Q_table[obs,a])
+									   self.opt_action_val(obs_prime) - 
+									   self.Q_table[obs,a])
 				obs = obs_prime
 				if self.record_training:
 					episode_reward += reward

@@ -10,9 +10,9 @@ from itertools import product
 
 # Initialize environment and action-value function.
 gamma = 1
-alpha = 0.01
+alpha = 0.1
 epsilon = 0.1
-n_episodes = 10000
+n_episodes = 20000
 env = gym.make('FrozenLake-v0', is_slippery=True)
 sa_pairs = product(range(env.observation_space.n), 
 				   range(env.action_space.n))

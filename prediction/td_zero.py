@@ -1,3 +1,4 @@
+# Created by Tristan Bester.
 import numpy as np 
 
 class TDZero(object):
@@ -14,13 +15,14 @@ class TDZero(object):
 		for episode in range(self.n_episodes):
 			done = False
 			obs = self.env.reset()
-			a = self.agent.greedy_action(obs)
-
+		
 			while not done:
+				a = self.agent.greedy_action(obs)
 				obs_prime, reward, done, info = self.env.step(a)
 				self.value_function[obs] +=  self.alpha * (reward + 
 				self.value_function[obs_prime] - self.value_function[obs])
 				obs = obs_prime
+
 			if episode % self.checkpoint == 0:
 				print('Episode: ', episode)
 
