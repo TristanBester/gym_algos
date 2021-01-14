@@ -42,9 +42,9 @@ class SARSA(object):
 			if self.record_training:
 				episode_reward = 0
 			a = self.eps_greedy(obs)
-			obs_prime, reward, done, info = self.env.step(a)
 
 			while not done:
+				obs_prime, reward, done, info = self.env.step(a)
 				a_prime = self.eps_greedy(obs_prime)
 				self.Q[obs,a] += self.alpha * (reward + self.Q[obs_prime, a_prime] -
 												   self.Q[obs, a])
@@ -52,7 +52,7 @@ class SARSA(object):
 					episode_reward += reward
 				obs = obs_prime
 				a = a_prime
-				obs_prime, reward, done, info = self.env.step(a)
+				
 				
 			if self.record_training:
 				self.all_rewards.append(episode_reward)
